@@ -3,6 +3,12 @@ import Transition from 'react-transition-group/Transition'
 
 import "./Modal.css";
 
+// Used to set animation durations for entering and exiting
+const animationTiming = {
+    enter: 400,
+    exit: 1000
+}
+
 const modal = props => {
 
     // If entering show modalOpen, if exiting show modalClosed
@@ -15,7 +21,7 @@ const modal = props => {
         mountOnEnter
         unmountOnExit
         in={props.show}
-        timeout={300}
+        timeout={animationTiming} // either in ms or object
     >
     {state => {
 
